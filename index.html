@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flying Aroplain: CSS animation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-image: url("Home.jpg");
+        background-repeat: no-repeat;
+
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .plan {
+        background-image: url("road.jpg");
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        left: 0;
+        bottom: 0;
+      }
+
+      .plain {
+        width: 280px;
+        height: 130px;
+        position: absolute;
+        bottom: 120px;
+        right: -10px;
+        animation: plan 6s linear infinite;
+        transform-origin: 100% 50%;
+      }
+
+      @keyframes plan {
+        0% {
+          transform: translateX(0px) translateY(0px) rotate(0deg);
+        }
+
+        35% {
+          transform: translateX(-500px) translateY(0px) rotate(5deg);
+        }
+
+        100% {
+          transform: translateX(-1500px) translateY(-220px) rotate(15deg);
+        }
+      }
+
+      ul {
+        list-style: none;
+        display: inline-flex;
+        padding: 15px 0;
+        font-family: cursive;
+        font-size: 21px;
+      }
+
+      nav ul li {
+        padding: 0 15px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: red;
+      }
+
+      .container {
+        /* background-color: seagreen;
+            overflow: hidden; */
+        border: 2px double black;
+        width: 355px;
+        height: 355px;
+        border-radius: 45rem;
+        float: right;
+        margin-right: 15px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Photos</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="plan"></div>
+      <img src="plain.png" class="plain" />
+    </div>
+  </body>
+</html>
